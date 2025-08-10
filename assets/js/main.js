@@ -12,28 +12,40 @@
   if(!canvas) return;
   const ctx = canvas.getContext('2d');
   let w,h,stars=[];
-  function resize(){ w=canvas.width=innerWidth; h=canvas.height=innerHeight; init(); }
+  const numStars = 400; // tweak for density
+  function resize(){
+    w = canvas.width = innerWidth;
+    h = canvas.height = innerHeight;
+    init();
+  }
   function init(){
     stars = [];
-    const count = Math.floor((w*h)/8000);
-    for(let i=0;i<count;i++){
+    for(let i=0;i<numStars;i++){
       stars.push({
-        x: Math.random()*w,
-        y: Math.random()*h,
-        z: Math.random()*1.5+0.2,
-        r: Math.random()*1.2+0.2
+        x: (Math.random()*w - w/2),
+        y: (Math.random()*h - h/2),
+        z: Math.random()*w
       });
     }
   }
   function frame(){
+    ctx.fillStyle = 'black';
     ctx.clearRect(0,0,w,h);
     for(let s of stars){
-      s.x += (s.z*0.15);
-      if(s.x>w){ s.x=0; s.y=Math.random()*h; }
-      const alpha = 0.5 + (s.z*0.5);
+      s.z -= 2; // speed: smaller is slower warp
+      if(s.z <= 0){
+        s.x = (Math.random()*w - w/2);
+        s.y = (Math.random()*h - h/2);
+        s.z = w;
+      }
+      const k = 128.0 / s.z;
+      const px = s.x * k + w/2;
+      const py = s.y * k + h/2;
+      if(px < 0 || px >= w || py < 0 || py >= h) continue;
+      const size = (1 - s.z / w) * 3;
       ctx.beginPath();
-      ctx.fillStyle = 'rgba(255,255,255,'+alpha+')';
-      ctx.arc(s.x,s.y,s.r*s.z,0,Math.PI*2);
+      ctx.fillStyle = 'white';
+      ctx.arc(px, py, size, 0, Math.PI*2);
       ctx.fill();
     }
     requestAnimationFrame(frame);
