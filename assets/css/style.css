@@ -17,11 +17,7 @@ html,body{height:100%}
 body{
   margin:0;
   min-height:100%;
-  background: radial-gradient(ellipse at top left, rgba(0,179,166,0.06), transparent 20%), var(--bg);
-  color: #e6eef6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
+  background-color: gold;
 }
 
 canvas#starfield{
