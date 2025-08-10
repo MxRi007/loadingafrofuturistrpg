@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Blog — Your Name</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<header class="topbar">
+  <div class="brand">
+    <h1>Your Name</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="drawings.html">Drawings</a>
+    <a href="blog.html" class="active">Blog</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Blog</h2>
+  <p class="lead">Posts are loaded from <code>/posts/index.json</code>. If you add new posts, update index.json or run the generator script included in the repo to rebuild the index.</p>
+
+  <div id="posts"></div>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year4"></span> Your Name</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

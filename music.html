@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Music — Your Name</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<header class="topbar">
+  <div class="brand">
+    <h1>Your Name</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html" class="active">Music</a>
+    <a href="drawings.html">Drawings</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Music</h2>
+  <p class="lead">Embedded SoundCloud tracks — replace TRACK_ID below with your track IDs.</p>
+
+  <section class="tracks">
+    <article class="track">
+      <h3>Track Title (Example)</h3>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/YOUR_TRACK_ID&color=%23ffcc00"></iframe>
+      <p class="meta">Released: 2025</p>
+    </article>
+
+    <!-- Duplicate the article block for more tracks -->
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year2"></span> Your Name</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

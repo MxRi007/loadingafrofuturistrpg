@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Drawings — Your Name</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<header class="topbar">
+  <div class="brand">
+    <h1>Your Name</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="drawings.html" class="active">Drawings</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Drawings</h2>
+  <p class="lead">Click an image to open a lightbox. Replace the sample images in <code>/assets/images/</code> with your own.</p>
+
+  <div class="gallery" id="gallery">
+    <a href="assets/images/art1.svg" class="thumb"><img src="assets/images/art1.svg" alt="Art 1"></a>
+    <a href="assets/images/art2.svg" class="thumb"><img src="assets/images/art2.svg" alt="Art 2"></a>
+    <a href="assets/images/art3.svg" class="thumb"><img src="assets/images/art3.svg" alt="Art 3"></a>
+    <a href="assets/images/art4.svg" class="thumb"><img src="assets/images/art4.svg" alt="Art 4"></a>
+  </div>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lbClose" class="lb-close" aria-label="Close">✕</button>
+    <img id="lbImg" src="" alt="">
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year3"></span> Your Name</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
